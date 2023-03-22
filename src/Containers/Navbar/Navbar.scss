@@ -1,4 +1,5 @@
 .navbar-container {
+    z-index: 1;
     display: flex;
 
     height: fit-content;
@@ -7,26 +8,15 @@
 
     align-items: center;
 
-    @media (max-width: 600px) {
-        margin-left: 24px;
-        margin-right: 24px;
+    @media (max-width: 1020px) {
+        margin-top: 16px;
         justify-content: space-between;
-    }
-
-    .navbar-title-container {
-        .navbar-title {
-            margin: 0;
-            font-size: 34px;
-            font-weight: 400;
-        }
     }
 
     .add-movie-button-container {
         margin-left: 64px;
-        @media (max-width: 900px) {
-            margin-left: auto;
-        }
-        @media (max-width: 600px) {
+
+        @media (max-width: 1020px) {
             margin-left: 0px;
         }
     }
@@ -39,7 +29,7 @@
     }
     .profile-button {
         margin-left: 40px;
-        @media (max-width: 600px) {
+        @media (max-width: 1020px) {
             margin-left: 0;
         }
     }

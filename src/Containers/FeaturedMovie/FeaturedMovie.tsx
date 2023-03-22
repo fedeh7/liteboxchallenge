@@ -16,8 +16,12 @@ export const FeaturedMovie = ({
             </p>
             <h1 className="featured-movie-title aquamarine bold">{title}</h1>
             <div className="featured-movie-buttons">
-                <PlayButton />
-                <MyListButton />
+                <div className="featured-movie-primary-button">
+                    <PlayButton />
+                </div>
+                <div className="featured-movie-secondary-button">
+                    <MyListButton />
+                </div>
             </div>
         </div>
     );

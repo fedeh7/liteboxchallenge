@@ -15,6 +15,7 @@ export const getMovies = async (): Promise<IMovieData[] | any> => {
 
 export interface IMovieData {
     backgroundImagePath: string;
+    posterImagePath: string;
     id: number;
     title: string;
     voteAverage: number;
@@ -28,6 +29,7 @@ const formatMoviesData = (movieList: object[]) => {
         const movie: any = movieList[i];
         const formattedMovie: IMovieData = {
             backgroundImagePath: movie.backdrop_path,
+            posterImagePath: movie.poster_path,
             id: movie.id,
             title: movie.title,
             voteAverage: movie.vote_average,

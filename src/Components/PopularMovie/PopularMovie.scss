@@ -5,7 +5,8 @@
     height: 146px;
 
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    align-items: flex-start;
     flex-direction: column;
 
     &:hover {
@@ -17,6 +18,10 @@
         }
     }
 
+    @media (max-width: 1020px) {
+        width: 327px;
+        height: 172px;
+    }
     .popular-movie-gradient-mask {
         position: absolute;
         width: 220px;
@@ -29,6 +34,10 @@
         border-radius: 4px;
 
         z-index: 0;
+        @media (max-width: 1020px) {
+            width: 327px;
+            height: 172px;
+        }
     }
 
     .popular-movie-play-icon {
@@ -49,7 +58,7 @@
 
     .popular-movie-hovered-title-container {
         position: absolute;
-        z-index: 1;
+        z-index: 2;
 
         margin-left: 16px;
         display: flex;
@@ -62,32 +71,46 @@
         .popular-movie-title-hovered {
             margin-left: 12px;
             text-align: center;
+            font-weight: 400;
+            font-size: 16px;
         }
     }
 
     .popular-movie-hovered-info-container {
         position: absolute;
-        width: 188px;
-        z-index: 1;
+        width: 220px;
+        z-index: 2;
 
-        margin-left: 16px;
-        margin-right: 16px;
-        bottom: 16px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
 
+        bottom: 16px;
+        @media (max-width: 1020px) {
+            width: 327px;
+        }
+
         .popular-movie-hovered-score-container {
             display: flex;
             flex-direction: row;
+            margin-left: 16px;
 
             .popular-movie-hovered-score {
                 margin-left: 6px;
+                @media (max-width: 1020px) {
+                    font-weight: 400;
+                    font-size: 14px;
+                }
             }
         }
         .popular-movie-release-date {
-            right: 16px;
+            margin-right: 16px;
+            // right: 16px;
+            @media (max-width: 1020px) {
+                font-weight: 400;
+                font-size: 14px;
+            }
         }
     }
 }

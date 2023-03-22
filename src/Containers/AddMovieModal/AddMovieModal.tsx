@@ -2,11 +2,7 @@ import './AddMovieModal.scss';
 import { PlusIcon } from '../../Icons/Plus';
 import { PlusCircleIcon } from '../../Icons/PlusCircle';
 
-export const AddMovieModal = ({
-    mobileBreakpoints,
-}: {
-    mobileBreakpoints: { isSmall: boolean; isMedium: boolean };
-}) => {
+export const AddMovieModal = ({ isMobile }: { isMobile: boolean }) => {
     // const Modal = <div className='modal-container'></div>;
     let content = (
         <>
@@ -20,7 +16,7 @@ export const AddMovieModal = ({
         </>
     );
 
-    if (mobileBreakpoints.isMedium) {
+    if (isMobile) {
         content = (
             <button className="add-movie-button-container">
                 <PlusCircleIcon />

@@ -1,11 +1,21 @@
 .featured-movie-container {
+    z-index: 1;
     min-width: 500px;
     max-width: fit-content;
     margin-top: 470px;
     display: flex;
     flex-direction: column;
+    @media (max-width: 1020px) {
+        min-width: 0;
+        max-width: 100%;
+        margin-top: 214px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 
     .featured-movie-subtitle {
+        line-height: 24px;
         font-size: 20px;
     }
     .featured-movie-title {
@@ -14,14 +24,32 @@
         text-transform: uppercase;
 
         margin-top: 24px;
+
+        @media (max-width: 1020px) {
+            font-size: 76px;
+            letter-spacing: 12px;
+            word-wrap: break-word;
+        }
     }
 
     .featured-movie-buttons {
         display: flex;
         flex-direction: row;
-        width: 520px;
-        justify-content: space-between;
 
         margin-top: 32px;
+
+        .featured-movie-secondary-button {
+            margin-left: 24px;
+            @media (max-width: 1020px) {
+                margin-left: 0;
+                margin-top: 16px;
+            }
+        }
+        @media (max-width: 1020px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 16px;
+        }
     }
 }

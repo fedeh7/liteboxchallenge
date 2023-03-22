@@ -1,21 +1,17 @@
+import { LiteflixTitle } from '../../Components/LiteflixTitle';
 import { BellIcon } from '../../Icons/Bell';
 import { MenuIcon } from '../../Icons/Menu';
 import { ProfileIcon } from '../../Icons/Profile';
 import { AddMovieModal } from '../AddMovieModal';
 import './Navbar.scss';
-export const Navbar = ({
-    mobileBreakpoints,
-}: {
-    mobileBreakpoints: { isSmall: boolean; isMedium: boolean };
-}) => {
+
+export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
     let content = (
         <nav className="navbar-container centered">
-            <div className="navbar-title-container aquamarine">
-                <h3 className="navbar-title">
-                    <span className="bold">LITE</span>FLIX
-                </h3>
+            <div className="navbar-title-container">
+                <LiteflixTitle />
             </div>
-            <AddMovieModal mobileBreakpoints={mobileBreakpoints} />
+            <AddMovieModal isMobile={isMobile} />
 
             <button className="menu-button">
                 <MenuIcon />
@@ -28,14 +24,12 @@ export const Navbar = ({
             </button>
         </nav>
     );
-    if (mobileBreakpoints.isSmall) {
+    if (isMobile) {
         content = (
-            <nav className="navbar-container">
-                <AddMovieModal mobileBreakpoints={mobileBreakpoints} />
+            <nav className="navbar-container centered">
+                <AddMovieModal isMobile={isMobile} />
                 <div className="navbar-title-container">
-                    <h3 className="navbar-title">
-                        <span className="navbar-title-bold">LITE</span>FLIX
-                    </h3>
+                    <LiteflixTitle />
                 </div>
                 <button className="profile-button">
                     <ProfileIcon />
