@@ -91,7 +91,7 @@ export const PopularMovie = ({
             onMouseLeave={handleOnStopHover}>
             <div className="popular-movie-gradient-mask" />
 
-            {isHovering ? hoveredContent : hoveredContent}
+            {isHovering ? hoveredContent : defaultContent}
         </div>
     );
 };
