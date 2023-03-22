@@ -29,7 +29,7 @@ export const App = () => {
 
     const backgroundImage = featuredMovie?.backgroundImagePath
         ? {
-              backgroundImage: `rgba(0,0,0,0.1), url('https://image.tmdb.org/t/p/original${featuredMovie.backgroundImagePath}')`,
+              backgroundImage: `url('https://image.tmdb.org/t/p/original${featuredMovie.backgroundImagePath}')`,
               backgroundSize: 'cover',
               backgroundRepeat: 'no-repeat',
           }
