@@ -1,0 +1,27 @@
+.featured-movie-container {
+    min-width: 500px;
+    max-width: fit-content;
+    margin-top: 470px;
+    display: flex;
+    flex-direction: column;
+
+    .featured-movie-subtitle {
+        font-size: 20px;
+    }
+    .featured-movie-title {
+        font-size: 120px;
+        letter-spacing: 16px;
+        text-transform: uppercase;
+
+        margin-top: 24px;
+    }
+
+    .featured-movie-buttons {
+        display: flex;
+        flex-direction: row;
+        width: 520px;
+        justify-content: space-between;
+
+        margin-top: 32px;
+    }
+}

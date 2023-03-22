@@ -1,0 +1,42 @@
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+body {
+    margin: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 4px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+h1,
+h3,
+p {
+    all: unset;
+}
+/* Basic Styles */
+.centered {
+    margin: 0;
+    margin-left: 104px;
+    margin-right: 104px;
+    max-width: 100%;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.aquamarine {
+    color: aquamarine;
+}
+
+.white {
+    color: white;
+}

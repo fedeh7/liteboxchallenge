@@ -1,0 +1,93 @@
+.popular-movie-card {
+    position: relative;
+    display: flex;
+    width: 220px;
+    height: 146px;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &:hover {
+        align-items: flex-start;
+
+        .popular-movie-gradient-mask {
+            background: rgba(36, 36, 36, 0.7);
+            border-radius: 4px;
+        }
+    }
+
+    .popular-movie-gradient-mask {
+        position: absolute;
+        width: 220px;
+        height: 146px;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 22.78%,
+            #000000 122.69%
+        );
+        border-radius: 4px;
+
+        z-index: 0;
+    }
+
+    .popular-movie-play-icon {
+        position: absolute;
+    }
+    .popular-movie-title {
+        position: absolute;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 16px;
+        z-index: 1;
+        bottom: 14px;
+
+        width: 188px;
+
+        text-align: center;
+    }
+
+    .popular-movie-hovered-title-container {
+        position: absolute;
+        z-index: 1;
+
+        margin-left: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .popular-movie-play-small-icon {
+            width: 24px;
+            height: 24px;
+        }
+        .popular-movie-title-hovered {
+            margin-left: 12px;
+            text-align: center;
+        }
+    }
+
+    .popular-movie-hovered-info-container {
+        position: absolute;
+        width: 188px;
+        z-index: 1;
+
+        margin-left: 16px;
+        margin-right: 16px;
+        bottom: 16px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        .popular-movie-hovered-score-container {
+            display: flex;
+            flex-direction: row;
+
+            .popular-movie-hovered-score {
+                margin-left: 6px;
+            }
+        }
+        .popular-movie-release-date {
+            right: 16px;
+        }
+    }
+}

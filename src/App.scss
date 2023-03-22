@@ -1,0 +1,19 @@
+.homepage-container {
+    display: flex;
+
+    min-height: 100vh;
+    min-width: 100vw;
+
+    background-color: gray;
+
+    flex-direction: column;
+    .homepage-container-background-mask {
+        min-height: 100vh;
+        min-width: 100vw;
+        background-color: rgba(36, 36, 36, 0.5);
+    }
+    .homepage-main-content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
