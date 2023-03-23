@@ -26,41 +26,26 @@ export const App = () => {
               backgroundImage: isMobile
                   ? `url('https://image.tmdb.org/t/p/original${featuredMovie.posterImagePath}')`
                   : `url('https://image.tmdb.org/t/p/original${featuredMovie.backgroundImagePath}')`,
-              // backgroundSize: 'cover',
-              // backgroundRepeat: 'no-repeat',
           }
         : undefined;
 
-    let content = (
-        <div className="homepage-main-content centered">
-            <FeaturedMovie isMobile={isMobile} title={featuredMovie?.title} />
-            <PopularMovies isMobile={isMobile} popularMovies={popularMovies} />
-        </div>
-    );
-
-    // if (isMobile) {
-    //     content = (
-    //         <>
-    //             <FeaturedMovie
-    //                 isMobile={isMobile}
-    //                 title={featuredMovie?.title}
-    //             />
-    //             <PopularMovies
-    //                 isMobile={isMobile}
-    //                 popularMovies={popularMovies}
-    //             />
-    //         </>
-    //     );
-    // }
     return (
         <main className="homepage-container">
             <div className="background-image" style={backgroundImage}>
                 <div className="background-mask" />
             </div>
-            {/* <div className="homepage-container-background-mask"> */}
+
             <Navbar isMobile={isMobile} />
-            {content}
-            {/* </div> */}
+            <div className="homepage-main-content centered">
+                <FeaturedMovie
+                    isMobile={isMobile}
+                    title={featuredMovie?.title}
+                />
+                <PopularMovies
+                    isMobile={isMobile}
+                    popularMovies={popularMovies}
+                />
+            </div>
         </main>
     );
 };

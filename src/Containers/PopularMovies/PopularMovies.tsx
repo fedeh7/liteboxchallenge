@@ -1,5 +1,6 @@
 import { Dropdown } from '../../Components/Dropdown';
-import { PopularMovie } from '../../Components/PopularMovie';
+import { PopularMovieCard } from '../../Components/PopularMovie';
+
 import { IMovieData } from '../../utils/apis';
 import './PopularMovies.scss';
 
@@ -21,7 +22,7 @@ export const PopularMovies = ({
                             <div
                                 className="popular-movie-card-container"
                                 key={index}>
-                                <PopularMovie
+                                <PopularMovieCard
                                     title={movie.title}
                                     voteAverage={movie.voteAverage}
                                     backgroundImagePath={

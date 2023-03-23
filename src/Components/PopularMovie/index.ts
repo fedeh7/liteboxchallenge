@@ -1,1 +1,1 @@
-export { PopularMovie } from './PopularMovie';
+export { PopularMovieCard } from './PopularMovieCard';

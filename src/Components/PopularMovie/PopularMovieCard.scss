@@ -1,0 +1,168 @@
+$container-default-height: 146px;
+$container-default-width: 220px;
+$container-mobile-height: 172px;
+$container-mobile-width: 327px;
+
+.popular-movie-card {
+    position: relative;
+    display: flex;
+    width: $container-default-width;
+    height: $container-default-height;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    @media (max-width: 1020px) {
+        width: $container-mobile-width;
+        height: $container-mobile-height;
+    }
+    .popular-movie-gradient-mask {
+        position: absolute;
+        width: $container-default-width;
+        height: $container-default-height;
+        background: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 22.78%,
+            #000000 122.69%
+        );
+        border-radius: 4px;
+
+        z-index: 0;
+        @media (max-width: 1020px) {
+            width: $container-mobile-width;
+            height: $container-mobile-height;
+        }
+    }
+
+    .popular-movie-button-and-title {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: $container-default-width;
+        height: $container-default-height;
+        @media (max-width: 1020px) {
+            width: $container-mobile-width;
+            height: $container-mobile-height;
+        }
+        .popular-movie-title {
+            position: absolute;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 16px;
+
+            bottom: 14px;
+
+            text-align: center;
+
+            @media (max-width: 1020px) {
+                bottom: 32px;
+            }
+        }
+        .popular-movie-play-icon {
+            position: absolute;
+            &:hover {
+                .play-circle-small-highlighted-icon {
+                    display: block;
+                }
+                .play-circle-icon {
+                    display: none;
+                }
+            }
+        }
+        .play-circle-small-highlighted-icon {
+            display: none;
+        }
+    }
+
+    .popular-movie-hovered-info-container {
+        display: none;
+        position: absolute;
+        width: $container-default-width;
+        z-index: 2;
+
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        bottom: 16px;
+        @media (max-width: 1020px) {
+            width: $container-mobile-width;
+        }
+
+        .popular-movie-hovered-score-container {
+            display: flex;
+            flex-direction: row;
+            margin-left: 16px;
+            @media (max-width: 1020px) {
+                margin-left: 24px;
+            }
+
+            .popular-movie-hovered-score {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 12px;
+                letter-spacing: 2px;
+                margin-left: 6px;
+            }
+        }
+        .popular-movie-release-date {
+            margin-right: 16px;
+
+            @media (max-width: 1020px) {
+                font-weight: 400;
+                font-size: 14px;
+                margin-right: 24px;
+            }
+        }
+    }
+
+    &:hover {
+        align-items: flex-start;
+        .popular-movie-gradient-mask {
+            background: rgba(36, 36, 36, 0.7);
+            border-radius: 4px;
+        }
+        .popular-movie-button-and-title {
+            justify-content: flex-start;
+            flex-direction: row;
+            .popular-movie-title {
+                position: unset;
+                bottom: unset;
+
+                margin-left: 12px;
+                text-align: center;
+
+                @media (max-width: 1020px) {
+                    bottom: 32px;
+                }
+            }
+            .popular-movie-play-icon {
+                position: unset;
+                margin-left: 16px;
+                height: 24px;
+                width: 24px;
+                @media (max-width: 1020px) {
+                    margin-left: 24px;
+                }
+
+                .play-circle-icon {
+                    height: 24px;
+                    width: 24px;
+                }
+                .play-circle-small-highlighted-icon {
+                    height: 24px;
+                    width: 24px;
+                }
+            }
+        }
+
+        .popular-movie-hovered-info-container {
+            display: flex;
+        }
+    }
+}
