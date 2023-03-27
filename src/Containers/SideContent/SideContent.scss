@@ -1,0 +1,12 @@
+.side-content-container {
+    display: flex;
+    width: fit-content;
+
+    margin-top: 80px;
+
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 1020px) {
+        margin-top: 64px;
+    }
+}

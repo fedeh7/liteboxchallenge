@@ -19,3 +19,18 @@ export const useMobileSize = (size: number) => {
 
     return size >= width;
 };
+
+export const useClickOutside = (ref: any, callBack: () => void) => {
+    useEffect(() => {
+        const listener = (event: any) => {
+            if (ref.current.contains(event.target)) {
+                return;
+            }
+            callBack();
+        };
+        document.addEventListener('click', listener);
+        return () => {
+            document.removeEventListener('click', listener);
+        };
+    }, [ref, callBack]);
+};

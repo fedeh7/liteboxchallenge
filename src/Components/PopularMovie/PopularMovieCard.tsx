@@ -16,7 +16,7 @@ export const PopularMovieCard = ({
     releaseDate: string;
 }) => {
     const backgroundImage = {
-        backgroundImage: `url('https://image.tmdb.org/t/p/w300${backgroundImagePath}')`,
+        backgroundImage: `url('${backgroundImagePath}')`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         borderRadius: '4px',

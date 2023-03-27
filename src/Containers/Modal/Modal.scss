@@ -1,0 +1,215 @@
+.modal-background {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    background-color: rgba(24, 24, 24, 0.7);
+
+    .modal-content-container {
+        width: 730px;
+        height: 440px;
+        background-color: #242424;
+        display: flex;
+        position: relative;
+
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .modal-close-button {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .modal-form-title {
+                font-size: 20px;
+                line-height: 20px;
+                letter-spacing: 4px;
+                margin-bottom: 48px;
+            }
+            .modal-form-upload-image-component-container {
+                width: 602px;
+                height: 100px;
+                margin-bottom: 48px;
+            }
+            .modal-movie-title-input {
+                width: 248px;
+                height: 24px;
+                text-align: center;
+                border-bottom: white 1px solid;
+                margin-bottom: 48px;
+
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 19.2px;
+                letter-spacing: 4px;
+
+                &::placeholder {
+                    color: white;
+                }
+                &:focus {
+                    &::placeholder {
+                        color: transparent;
+                    }
+                }
+            }
+            .modal-upload-movie-button {
+                width: 248px;
+                height: 56px;
+                background-color: white;
+                text-align: center;
+                font-size: 18px;
+                line-height: 21.6px;
+                letter-spacing: 4px;
+                &:disabled {
+                    background-color: rgba(255, 255, 255, 0.5);
+                    cursor: unset;
+                }
+            }
+            .modal-exit-button {
+                display: none;
+            }
+        }
+
+        .modal-upload-complete-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .liteflix-title {
+                margin-bottom: 72px;
+            }
+            .modal-upload-complete-congratulations {
+                font-size: 24px;
+                line-height: 26px;
+                letter-spacing: 4px;
+
+                margin-bottom: 24px;
+            }
+
+            .modal-upload-complete-message {
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: 4px;
+                font-weight: 500;
+                text-align: center;
+
+                margin-bottom: 92px;
+            }
+
+            .modal-return-home-button {
+                width: 248px;
+                height: 56px;
+                background-color: white;
+                text-align: center;
+                font-size: 18px;
+                line-height: 21.6px;
+                letter-spacing: 4px;
+            }
+        }
+    }
+
+    // Mobile styles
+    @media (max-width: 1020px) {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(24, 24, 24, 0.7);
+
+        .modal-content-container {
+            width: 100vw;
+            height: 100vh;
+            background-color: #242424;
+            display: flex;
+
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+
+            .modal-close-button {
+                display: none;
+            }
+
+            .modal-form {
+                margin-top: 148px;
+                width: 100vw;
+
+                .modal-form-title {
+                    font-size: 22px;
+                    line-height: 22px;
+                    margin-bottom: 72px;
+                }
+                .modal-form-upload-image-component-container {
+                    display: flex;
+                    width: 100%;
+                    height: 81px;
+                    margin-bottom: 56px;
+
+                    .modal-upload-image-container {
+                        margin: unset;
+                        margin-left: 24px;
+                        margin-right: 24px;
+                    }
+                }
+                .modal-movie-title-input {
+                    margin-bottom: 96px;
+                }
+                .modal-upload-movie-button {
+                    margin-bottom: 24px;
+                }
+                .modal-exit-button {
+                    display: block;
+                    width: 248px;
+                    height: 56px;
+                    background-color: #242424;
+                    border: 1px solid rgba(255, 255, 255, 0.5);
+                    text-align: center;
+
+                    font-size: 18px;
+                    line-height: 21.6px;
+                    letter-spacing: 4px;
+                }
+            }
+
+            .modal-upload-complete-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .liteflix-title {
+                    margin-bottom: 72px;
+                    display: none;
+                }
+                .modal-upload-complete-congratulations {
+                    margin-top: 244px;
+                    margin-bottom: 32px;
+                }
+
+                .modal-upload-complete-message {
+                    margin-left: 24px;
+                    margin-right: 24px;
+                    line-height: 32px;
+
+                    margin-bottom: 133px;
+                }
+
+                .modal-return-home-button {
+                }
+            }
+        }
+    }
+}

@@ -13,13 +13,12 @@
     .background-image {
         z-index: 0;
         position: absolute;
-        min-height: 100vh;
-        min-width: 100vw;
+
+        height: 100%;
+        width: 100%;
         background-repeat: no-repeat;
         background-size: cover;
         @media (max-width: 1020px) {
-            min-height: 0;
-            min-width: 0;
             max-height: 100vh;
             max-width: 100vw;
 
@@ -29,15 +28,13 @@
         }
         .background-mask {
             z-index: 0;
-            height: 100vh;
-            width: 100vw;
+
+            height: 100%;
+            width: 100%;
 
             background-color: rgba(36, 36, 36, 0.5);
 
             @media (max-width: 1020px) {
-                max-height: 100vh;
-                max-width: 100vw;
-
                 background: linear-gradient(
                     180deg,
                     rgba(24, 24, 24, 0.5) 20%,

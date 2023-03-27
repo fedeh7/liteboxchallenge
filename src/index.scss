@@ -17,13 +17,18 @@ button {
     all: unset;
     cursor: pointer;
 }
+
 h1,
 h3,
-p {
+p,
+input {
     all: unset;
 }
 
 /* Basic Styles */
+.hidden {
+    display: none;
+}
 .centered {
     margin: 0;
     margin-left: 104px;

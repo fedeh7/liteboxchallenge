@@ -1,0 +1,150 @@
+.modal-upload-image-container {
+    width: 100%;
+    height: 100%;
+    border: 1px dashed white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.no-borders {
+        border: none;
+    }
+    &.drag-active {
+        background-color: rgba(24, 24, 24, 0.5);
+    }
+
+    .label-upload-image {
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19.2px;
+
+        .clip-icon {
+            margin-right: 16px;
+        }
+
+        .modal-upload-image-input {
+            display: none;
+        }
+    }
+
+    .modal-upload-progress {
+        width: 602px;
+        height: 77px;
+        display: flex;
+        flex-direction: column;
+
+        .modal-upload-progress-message {
+            margin-bottom: 16px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19.2px;
+            &.bold {
+                line-height: 16px;
+                font-weight: 700;
+            }
+        }
+        .modal-upload-progress-bar-container {
+            width: 100%;
+            height: 10px;
+            align-self: center;
+            margin-bottom: 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            .modal-upload-progress-bar-highlight {
+                position: absolute;
+                height: 10px;
+                background-color: aquamarine;
+                z-index: 1;
+            }
+            .modal-upload-progress-bar-gray-line {
+                position: absolute;
+                height: 4px;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .modal-upload-button-container {
+            align-self: flex-end;
+
+            .modal-upload-progress-cancel {
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 4px;
+            }
+            .modal-upload-progress-retry {
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 4px;
+            }
+            .modal-upload-progress-done {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 21.6px;
+                letter-spacing: 4px;
+            }
+        }
+    }
+
+    @media (max-width: 1020px) {
+        .modal-upload-progress {
+            width: 602px;
+            height: 77px;
+            display: flex;
+            flex-direction: column;
+
+            .modal-upload-progress-message {
+                font-size: 14px;
+                line-height: 16.8px;
+                &.bold {
+                    line-height: 14px;
+                }
+            }
+            .modal-upload-progress-bar-container {
+                width: 100%;
+                height: 10px;
+                align-self: center;
+                margin-bottom: 16px;
+                position: relative;
+                display: flex;
+                align-items: center;
+                .modal-upload-progress-bar-highlight {
+                    position: absolute;
+                    height: 10px;
+                    background-color: aquamarine;
+                    z-index: 1;
+                }
+                .modal-upload-progress-bar-gray-line {
+                    position: absolute;
+                    height: 4px;
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, 0.5);
+                }
+            }
+
+            .modal-upload-button-container {
+                align-self: flex-end;
+
+                .modal-upload-progress-cancel {
+                    font-size: 16px;
+                    line-height: 16px;
+                    letter-spacing: 4px;
+                }
+                .modal-upload-progress-retry {
+                    font-size: 16px;
+                    line-height: 16px;
+                    letter-spacing: 4px;
+                }
+                .modal-upload-progress-done {
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 16px;
+                    letter-spacing: 4px;
+                }
+            }
+        }
+    }
+}

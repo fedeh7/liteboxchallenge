@@ -1,0 +1,1 @@
+export { ClipIcon } from './ClipIcon';

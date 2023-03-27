@@ -2,16 +2,24 @@ import { LiteflixTitle } from '../../Components/LiteflixTitle';
 import { BellIcon } from '../../Icons/Bell';
 import { MenuIcon } from '../../Icons/Menu';
 import { ProfileIcon } from '../../Icons/Profile';
-import { AddMovieModal } from '../AddMovieModal';
+import { AddMovieButton } from '../../Components/AddMovieButton';
 import './Navbar.scss';
 
-export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
+export const Navbar = ({
+    isMobile,
+    openModal,
+    modalShown,
+}: {
+    isMobile: boolean;
+    modalShown: boolean;
+    openModal: () => void;
+}) => {
     let content = (
         <nav className="navbar-container centered">
             <div className="navbar-title-container">
                 <LiteflixTitle />
             </div>
-            <AddMovieModal isMobile={isMobile} />
+            <AddMovieButton isMobile={isMobile} openModal={openModal} />
 
             <button className="menu-button">
                 <MenuIcon />
@@ -27,10 +35,12 @@ export const Navbar = ({ isMobile }: { isMobile: boolean }) => {
     if (isMobile) {
         content = (
             <nav className="navbar-container centered">
-                <AddMovieModal isMobile={isMobile} />
-                <div className="navbar-title-container">
-                    <LiteflixTitle />
-                </div>
+                {!modalShown && (
+                    <AddMovieButton isMobile={isMobile} openModal={openModal} />
+                )}
+
+                <LiteflixTitle />
+
                 <button className="profile-button">
                     <ProfileIcon />
                 </button>

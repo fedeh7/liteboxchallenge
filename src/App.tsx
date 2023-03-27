@@ -1,15 +1,25 @@
 import { useEffect, useState } from 'react';
 import { FeaturedMovie } from './Containers/FeaturedMovie';
 import { Navbar } from './Containers/Navbar';
-import { PopularMovies } from './Containers/PopularMovies';
+
 import { getMovies, IMovieData } from './utils/apis';
 import './App.scss';
 import { useMobileSize } from './utils/hooks';
+import { Modal } from './Containers/Modal';
+import { SideContent } from './Containers/SideContent';
 
 export const App = () => {
     const [featuredMovie, setFeaturedMovie] = useState<IMovieData>();
     const [popularMovies, setPopularMovies] = useState<IMovieData[]>();
+    const [modalShown, setModalShown] = useState(false);
     const isMobile = useMobileSize(1020);
+
+    const openModal = () => {
+        setModalShown(true);
+    };
+    const closeModal = () => {
+        setModalShown(false);
+    };
 
     useEffect(() => {
         const getFeaturedMovieData = async () => {
@@ -35,17 +45,21 @@ export const App = () => {
                 <div className="background-mask" />
             </div>
 
-            <Navbar isMobile={isMobile} />
+            <Navbar
+                isMobile={isMobile}
+                openModal={openModal}
+                modalShown={modalShown}
+            />
             <div className="homepage-main-content centered">
                 <FeaturedMovie
                     isMobile={isMobile}
                     title={featuredMovie?.title}
                 />
-                <PopularMovies
-                    isMobile={isMobile}
-                    popularMovies={popularMovies}
-                />
+                <SideContent popularMovies={popularMovies} />
             </div>
+            {modalShown && (
+                <Modal closeModal={closeModal} isMobile={isMobile} />
+            )}
         </main>
     );
 };

@@ -1,22 +1,77 @@
 import './Dropdown.scss';
 import { ArrowDownIcon } from '../../Icons/ArrowDown';
 import { CheckmarkIcon } from '../../Icons/Checkmark';
-import { Dispatch, SetStateAction, useState } from 'react';
+import { Dispatch, SetStateAction, useRef, useState } from 'react';
+import { useClickOutside } from '../../utils/hooks';
 
-const Option = ({
-    optionText,
-    currentOption,
+export const Dropdown = ({
+    options,
     selectedOption,
     setSelectedOption,
 }: {
-    optionText: string;
-    currentOption: number;
-    selectedOption: number;
-    setSelectedOption: Dispatch<SetStateAction<number>>;
+    options: string[];
+    selectedOption: string;
+    setSelectedOption: Dispatch<SetStateAction<string>>;
 }) => {
-    const isSelected = currentOption === selectedOption;
+    const [dropdownContentVisible, setDropdownContentVisible] = useState(false);
+    const ref = useRef(null);
+
+    const toggleDropdown = () => {
+        setDropdownContentVisible(!dropdownContentVisible);
+    };
+
+    const closeDropdown = () => {
+        setDropdownContentVisible(false);
+    };
+    useClickOutside(ref, closeDropdown);
+    const dropdownContent = (
+        <>
+            <div className="dropdown-arrow-row">{triangleFigure}</div>
+            <div className="dropdown-content">
+                <div className="dropdown-content-options-container">
+                    {options.map((optionText, index) => {
+                        return (
+                            <Option
+                                optionText={optionText}
+                                key={index}
+                                selectedOption={selectedOption}
+                                setSelectedOption={setSelectedOption}
+                                closeDropdown={closeDropdown}
+                            />
+                        );
+                    })}
+                </div>
+            </div>
+        </>
+    );
+    return (
+        <div className="dropdown-container" ref={ref}>
+            <button
+                className="dropdown-button-container white"
+                onClick={toggleDropdown}>
+                VER: <span className="bold">{selectedOption}</span>{' '}
+                <ArrowDownIcon />
+            </button>
+            {dropdownContentVisible && dropdownContent}
+        </div>
+    );
+};
+
+const Option = ({
+    optionText,
+    selectedOption,
+    setSelectedOption,
+    closeDropdown,
+}: {
+    optionText: string;
+    selectedOption: string;
+    setSelectedOption: Dispatch<SetStateAction<string>>;
+    closeDropdown: () => void;
+}) => {
+    const isSelected = optionText === selectedOption;
     const selectCurrentOption = () => {
-        setSelectedOption(currentOption);
+        setSelectedOption(optionText);
+        closeDropdown();
     };
     return (
         <div
@@ -36,43 +91,3 @@ const triangleFigure = (
         <div className="triangle-right" />
     </div>
 );
-export const Dropdown = () => {
-    const [selectedOption, setSelectedOption] = useState(0);
-    const [dropdownContentVisible, setDropdownContentVisible] = useState(false);
-
-    const toggleDropdown = () => {
-        setDropdownContentVisible(!dropdownContentVisible);
-    };
-    const options = ['Populares', 'Mis peliculas'];
-
-    const dropdownContent = (
-        <>
-            <div className="dropdown-arrow-row">{triangleFigure}</div>
-            <div className="dropdown-content">
-                <div className="dropdown-content-options-container">
-                    {options.map((optionText, index) => {
-                        return (
-                            <Option
-                                optionText={optionText}
-                                key={index}
-                                currentOption={index}
-                                selectedOption={selectedOption}
-                                setSelectedOption={setSelectedOption}
-                            />
-                        );
-                    })}
-                </div>
-            </div>
-        </>
-    );
-    return (
-        <div className="dropdown-container">
-            <button
-                className="dropdown-button-container white"
-                onClick={toggleDropdown}>
-                VER: <span className="bold">POPULARES</span> <ArrowDownIcon />
-            </button>
-            {dropdownContentVisible && dropdownContent}
-        </div>
-    );
-};
