@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Dropdown } from '../../Components/Dropdown';
-import { PopularMovieCard } from '../../Components/PopularMovie';
 
 import { IMovieData } from '../../utils/apis';
 import { MyMovies } from '../MyMovies';

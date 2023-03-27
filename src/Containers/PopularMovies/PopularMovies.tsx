@@ -1,4 +1,3 @@
-import { Dropdown } from '../../Components/Dropdown';
 import { PopularMovieCard } from '../../Components/PopularMovie';
 
 import { IMovieData } from '../../utils/apis';

@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react';
-import { Dropdown } from '../../Components/Dropdown';
 import { PopularMovieCard } from '../../Components/PopularMovie';
 import {
     MY_MOVIE_IMAGE_LOCALSTORAGE_KEY,
     MY_MOVIE_TITLE_LOCALSTORAGE_KEY,
 } from '../../Constants';
 
-import { IMovieData } from '../../utils/apis';
 import './MyMovies.scss';
 
 export const MyMovies = () => {
